@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title title="Spaans Graded Reader (Niveau B1)">Lector Graduado de Español (Nivel B1)</title>
+    <title>Lector Graduado de Español</title>
     <style>
         :root {
-            --primary-color: #004a99; /* Azul oscuro */
-            --secondary-color: #ff9900; /* Naranja/Amarillo */
-            --background-color: #f0f4f8; /* Gris azulado claro */
+            --primary-color: #004a99;
+            --secondary-color: #ff9900;
+            --background-color: #f0f4f8;
             --text-color: #333;
             --section-bg: #fff;
             --border-radius: 8px;
@@ -35,13 +35,10 @@
             padding: 40px;
         }
 
-        h1, h2, h3 {
+        h1 {
             color: var(--primary-color);
             font-family: 'Arial', sans-serif;
             font-weight: 700;
-        }
-
-        h1 {
             text-align: center;
             border-bottom: 3px solid var(--secondary-color);
             padding-bottom: 10px;
@@ -49,86 +46,50 @@
             font-size: 2.5em;
         }
 
-        h2 {
-            margin-top: 40px;
-            font-size: 1.8em;
-            background-color: var(--background-color);
-            padding: 10px 15px;
-            border-left: 5px solid var(--secondary-color);
-            border-radius: var(--border-radius);
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .story p {
-            margin-bottom: 1.5em;
-            text-align: justify;
-        }
-
-        /* Tooltip Style */
-        .story p span, .section-header {
-            cursor: help;
-            border-bottom: 1px dotted var(--primary-color);
-        }
-
-        /* Key Vocab */
-        .vocab-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .vocab-item {
+        .story-card {
             background-color: #e6f0ff;
-            border: 1px solid var(--primary-color);
-            padding: 10px 15px;
+            border: 2px solid var(--primary-color);
             border-radius: var(--border-radius);
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow);
         }
 
-        .vocab-item strong {
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .story-card h2 {
             color: var(--primary-color);
-            margin-right: 5px;
-        }
-
-        .vocab-item span {
-            margin-right: 10px;
-            font-size: 1.5em;
-        }
-
-        /* Comprehension Check */
-        .quiz-question {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: var(--border-radius);
-            background-color: #fff;
-        }
-
-        .quiz-question strong {
-            display: block;
+            font-family: 'Arial', sans-serif;
+            margin-top: 0;
             margin-bottom: 10px;
-            color: var(--primary-color);
         }
 
-        .quiz-question label {
-            display: block;
-            margin-bottom: 8px;
-            cursor: pointer;
-            padding: 5px;
+        .story-card p {
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+
+        .story-level {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
             border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-
-        .quiz-question label:hover {
-            background-color: #f0f0f0;
-        }
-
-        .quiz-question input[type="radio"] {
-            margin-right: 10px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .footer-note {
@@ -141,148 +102,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 title="Welkom bij je Spaanse les!">¡Bienvenido a tu lección de español!</h1>
+        <h1>¡Bienvenido a tu lección de español!</h1>
+        <p style="text-align: center; font-size: 1.1em;">Selecciona una historia para comenzar:</p>
 
-        <h2 title="Het Mysterie van de Verdwenen Paella">El Misterio de la Paella Desaparecida</h2>
-
-        <div class="story">
-            <p>
-                <span title="Het was een hete namiddag in Valencia.">Era una tarde calurosa en Valencia.</span>
-                <span title="Elías, een gepensioneerde postbode, bereidde zijn beroemde zeevruchtenpaella voor.">Elías, un cartero jubilado, preparaba su famosa paella de marisco.</span>
-                <span title="Hij had de ingrediënten zorgvuldig geselecteerd: de rijst was van de beste kwaliteit, de saffraan was puur en de garnalen zagen er vers uit.">Había seleccionado los ingredientes con cuidado: el arroz era de la mejor calidad, el azafrán puro y las gambas parecían frescas.</span>
-                <span title="Het recept was een familietraditie, en Elías was van plan om zijn neven ermee te verrassen.">La receta era una tradición familiar, y Elías planeaba sorprender a sus sobrinos con ella.</span>
-            </p>
-
-            <p>
-                <span title="Tegen vier uur was het gerecht klaar.">Hacia las cuatro de la tarde, el plato estaba listo.</span>
-                <span title="De geur verspreidde zich door de hele buurt.">El aroma se extendía por todo el vecindario.</span>
-                <span title="«Ik zal snel de tafel dekken,» dacht Elías, «voordat ze aankomen.»">«Voy a poner la mesa rápidamente,» pensó Elías, «antes de que lleguen.»</span>
-                <span title="Hij verliet de keuken slechts voor vijf minuten, om de borden in de eetkamer te zetten.">Abandonó la cocina solo por cinco minutos, para colocar los platos en el comedor.</span>
-            </p>
-
-            <p>
-                <span title="Toen hij terugkwam, stopte zijn hart bijna.">Al regresar, el corazón le dio un vuelco.</span>
-                <span title="De paella, die hij op het aanrecht had laten staan, was verdwenen!">¡La paella, que había dejado sobre la encimera, había desaparecido!</span>
-                <span title="Alleen de grote, lege pan en een paar overgebleven citroenschillen bleven over.">Solo quedaba la paellera grande y vacía y algunas cáscaras de limón sobrantes.</span>
-                <span title="«Dit is onmogelijk!» riep hij uit.">«¡Esto es imposible!» exclamó.</span>
-                <span title="«Wie of wat zou in staat zijn geweest om zo'n hoeveelheid voedsel in zo'n korte tijd mee te nemen?»">«¿Quién o qué habría sido capaz de llevarse semejante cantidad de comida en tan poco tiempo?»</span>
-            </p>
-
-            <p>
-                <span title="Elías besloot de situatie onmiddellijk te onderzoeken.">Elías decidió investigar la situación de inmediato.</span>
-                <span title="Hij herinnerde zich dat hij, toen hij de deur naar de eetkamer opende, een vreemd geluid had gehoord, een soort zacht 'plof'.">Recordó que, al abrir la puerta del comedor, había oído un ruido extraño, una especie de «plof» suave.</span>
-                <span title="Dat geluid leidde hem naar de achtertuin.">Ese sonido le condujo al patio trasero.</span>
-                <span title="Tussen de bloempotten zag hij iets ongewoons.">Entre las macetas, vio algo inusual.</span>
-                <span title="Er waren kleine oranje sporen, alsof een heel klein persoon net had gegeten.">Había unas pequeñas huellas de color naranja, como si una persona muy diminuta hubiera comido justo allí.</span>
-            </p>
-
-            <p>
-                <span title="Hij zocht verder en ontdekte, bij een kleine fontein, een briefje.">Siguió buscando y descubrió, junto a una pequeña fuente, una nota.</span>
-                <span title="Het was geschreven met een keurig en elegante handschrift.">Estaba escrita con una caligrafía pulcra y elegante.</span>
-                <span title="Het briefje zei: «Hartelijk dank voor de voortreffelijke paella.">La nota decía: «Muchas gracias por la paella tan exquisita.</span>
-                <span title="We hadden dringend behoefte aan versterking voor de expeditie.">Necesitábamos un refuerzo urgente para la expedición.</span>
-                <span title="We zullen het morgen terugbetalen.">Mañana se la devolveremos.</span>
-                <span title="P.S. U bent een geweldige kok.»">P.D. Es usted un cocinero excelente.»</span>
-            </p>
-
-            <p>
-                <span title="Elías lachte.">Elías se rio.</span>
-                <span title="Hij was niet boos, maar eerder nieuwsgierig.">No estaba enfadado, sino más bien curioso.</span>
-                <span title="«Versterking?">«¿Refuerzo?</span>
-                <span title="Expeditie?» vroeg hij zich af.">¿Expedición?» se preguntó.</span>
-                <span title="De volgende dag, toen hij wakker werd, zag hij een grote tas voor de deur staan.">Al día siguiente, al despertarse, encontró una bolsa grande delante de la puerta.</span>
-                <span title="Binnenin zat een andere paella, tweemaal zo groot, een nieuwe pan en een klein, glimmend kompas.">Dentro había otra paella, el doble de grande, una paellera nueva y una pequeña brújula brillante.</span>
-                <span title="Bovenop lag een kaart van de buurt met een kleine rode X gemarkeerd.">Encima, había un mapa del vecindario con una pequeña X roja marcada.</span>
-                <span title="Het mysterie was opgelost, maar een nieuw avontuur begon net.">El misterio estaba resuelto, pero una nueva aventura acababa de empezar.</span>
-            </p>
+        <div class="stories-grid">
+            <a href="stories/story1.html" class="story-card">
+                <div class="story-level">Nivel B1</div>
+                <h2>El Misterio de la Paella Desaparecida</h2>
+                <p>Una historia misteriosa sobre una paella desaparecida en Valencia y el descubrimiento de una aventura inesperada.</p>
+            </a>
+            <!-- Add more story cards as you generate them -->
         </div>
 
-        <h2 title="Belangrijkste Woordenschat" class="section-header">Key Vocab</h2>
-        <ul class="vocab-list">
-            <li class="vocab-item"><span title="gepensioneerd">👴</span> <strong>Jubilado/a:</strong> Gepensioneerd</li>
-            <li class="vocab-item"><span title="de paella (pan)">🥘</span> <strong>La paellera:</strong> De paella (pan)</li>
-            <li class="vocab-item"><span title="het schort">🦐</span> <strong>El marisco:</strong> De zeevruchten</li>
-            <li class="vocab-item"><span title="de saffraan">🌼</span> <strong>El azafrán:</strong> De saffraan</li>
-            <li class="vocab-item"><span title="de garnaal">🍤</span> <strong>La gamba:</strong> De garnaal</li>
-            <li class="vocab-item"><span title="de namiddag">🕓</span> <strong>La tarde:</strong> De namiddag</li>
-            <li class="vocab-item"><span title="plotselinge beweging/schok">💖</span> <strong>Dar un vuelco:</strong> Plotselinge beweging/schok (van het hart)</li>
-            <li class="vocab-item"><span title="de toonbank/het aanrecht">🍽️</span> <strong>La encimera:</strong> De toonbank/het aanrecht</li>
-            <li class="vocab-item"><span title="de overblijfselen/restjes">🍋</span> <strong>Sobrante/s:</strong> De overblijfselen/restjes (bijvoeglijk naamwoord)</li>
-            <li class="vocab-item"><span title="de vingerafdrukken/sporen">👣</span> <strong>La huella:</strong> De (voet)afdruk/het spoor</li>
-            <li class="vocab-item"><span title="de fontein">⛲</span> <strong>La fuente:</strong> De fontein</li>
-            <li class="vocab-item"><span title="de missie/expeditie">🗺️</span> <strong>La expedición:</strong> De missie/expeditie</li>
-        </ul>
-
-        <h2 title="Belangrijkste Grammatica" class="section-header">Key Grammar (B1 Focus)</h2>
-        <p title="We zien in het verhaal twee belangrijke werkwoordstijden voor het verleden:">
-            <span title="We zien in het verhaal twee belangrijke werkwoordstijden voor het verleden:">Vemos en la historia dos tiempos verbales importantes para el pasado:</span>
-        </p>
-
-        <h3 title="Onvoltooid Verleden Tijd (Imperfecto)" class="section-header">El Pretérito Imperfecto (Onvoltooid Verleden Tijd)</h3>
-        <blockquote title="Gebruikt om te beschrijven: omstandigheden in het verleden, gewoonten, en wat er aan de gang was.">
-            <span title="Gebruikt om te beschrijven: omstandigheden in het verleden, gewoonten, en wat er aan de gang was.">Se utiliza para describir: circunstancias en el pasado, hábitos, y lo que estaba en curso.</span>
-            <p>
-                <span title="Voorbeelden: 'Era una tarde calurosa' (Het was een hete namiddag).">Ejemplos: «Era una tarde calurosa» (Het was een hete namiddag).</span>
-                <span title="'Elías preparaba su famosa paella' (Elías was zijn beroemde paella aan het bereiden).">«Elías preparaba su famosa paella» (Elías was zijn beroemde paella aan het bereiden).</span>
-                <span title="'El arroz era de la mejor calidad' (De rijst was van de beste kwaliteit).">«El arroz era de la mejor calidad» (De rijst was van de beste kwaliteit).</span>
-            </p>
-        </blockquote>
-
-        <h3 title="Voltooid Verleden Tijd (Indefinido)" class="section-header">El Pretérito Indefinido (Voltooid Verleden Tijd)</h3>
-        <blockquote title="Gebruikt om acties uit te drukken die op een specifiek moment in het verleden zijn begonnen en geëindigd. De actie is afgesloten.">
-            <span title="Gebruikt om acties uit te drukken die op een specifiek moment in het verleden zijn begonnen en geëindigd. De actie is afgesloten.">Se usa para expresar acciones que empezaron y terminaron en un momento específico del pasado. La acción está cerrada.</span>
-            <p>
-                <span title="Voorbeelden: 'Abandonó la cocina' (Hij verliet de keuken).">Ejemplos: «Abandonó la cocina» (Él abandonó la cocina).</span>
-                <span title="'El plato estaba listo' (Het gerecht was klaar - de toestand is afgesloten).">«El plato estaba listo» (Het gerecht was klaar - de toestand is afgesloten).</span>
-                <span title="'Descubrió una nota' (Hij ontdekte een briefje).">«Descubrió una nota» (Él descubrió una nota).</span>
-            </p>
-        </blockquote>
-
-        <h2 title="Begripscontrole" class="section-header">Comprehension Check</h2>
-
-        <form>
-            <div class="quiz-question">
-                <strong title="Wat was de reden dat Elías de keuken voor slechts vijf minuten verliet?">1. ¿Cuál fue el motivo por el que Elías abandonó la cocina solo por cinco minutos?</strong>
-                <label title="Om de gasten te begroeten die vroeg waren aangekomen.">
-                    <input type="radio" name="q1" value="a"> A. Para recibir a los invitados que habían llegado temprano.
-                </label>
-                <label title="Om snel de tafel te dekken in de eetkamer.">
-                    <input type="radio" name="q1" value="b"> B. Para poner la mesa rápidamente en el comedor.
-                </label>
-                <label title="Om meer saffraan uit de bijkeuken te halen.">
-                    <input type="radio" name="q1" value="c"> C. Para ir a buscar más azafrán al cuartito.
-                </label>
-            </div>
-
-            <div class="quiz-question">
-                <strong title="Wat leidde Elías naar de achtertuin om de daders te zoeken?">2. ¿Qué fue lo que le condujo a Elías al patio trasero a buscar a los culpables?</strong>
-                <label title="De geur van de paella die zich in die richting verspreidde.">
-                    <input type="radio" name="q2" value="a"> A. El olor de la paella que se extendía en esa dirección.
-                </label>
-                <label title="Het geluid van de deur die openging.">
-                    <input type="radio" name="q2" value="b"> B. El ruido de la puerta abriéndose.
-                </label>
-                <label title="Een zacht 'plof'-geluid dat hij hoorde toen hij terugkwam.">
-                    <input type="radio" name="q2" value="c"> C. Un «plof» suave que escuchó al regresar.
-                </label>
-            </div>
-
-            <div class="quiz-question">
-                <strong title="Wat beloofden de schrijvers van het briefje aan Elías?">3. ¿Qué le prometían a Elías los escritores de la nota?</strong>
-                <label title="Om hem te helpen zijn volgende paella te bereiden.">
-                    <input type="radio" name="q3" value="a"> A. Que le ayudarían a preparar su próxima paella.
-                </label>
-                <label title="Om hem de volgende dag het gerecht en meer terug te geven.">
-                    <input type="radio" name="q3" value="b"> B. Que le devolverían el plato y más al día siguiente.
-                </label>
-                <label title="Om hem te vergezellen op de expeditie waar ze versterking voor nodig hadden.">
-                    <input type="radio" name="q3" value="c"> C. Que le acompañarían en la expedición para la que necesitaban refuerzo.
-                </label>
-            </div>
-        </form>
-
-        <div class="footer-note" title="Gemaakt door Spanish Flashcard. ¡Veel succes met je studie!">
-            <span title="Gemaakt door Spanish Flashcard. ¡Veel succes met je studie!">Hecho por Spanish Flashcard. ¡Mucha suerte con tu estudio!</span>
+        <div class="footer-note">
+            <span>Hecho por Spanish Flashcard. ¡Mucha suerte con tu estudio!</span>
         </div>
     </div>
 </body>
