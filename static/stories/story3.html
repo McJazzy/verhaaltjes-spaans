@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Misterio del Reloj de Arena de Bronce (Lector B1)</title>
+    <style>
+        :root {
+            --color-primary: #3f51b5; /* Indigo */
+            --color-secondary: #ff9800; /* Amber */
+            --color-text: #333;
+            --color-background: #f4f7f6;
+            --color-card-bg: #ffffff;
+            --font-serif: 'Georgia', serif;
+            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: var(--font-serif);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--color-card-bg);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h2 {
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-family: var(--font-serif);
+        }
+
+        /* Story Styling */
+        #story p {
+            font-family: var(--font-serif);
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+        }
+
+        /* Tooltip Styling */
+        [title] {
+            cursor: help;
+            border-bottom: 1px dotted var(--color-secondary);
+            text-decoration: none; /* Ensure no default underline */
+            position: relative;
+        }
+
+        /* Key Vocab Styling */
+        #vocab ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        #vocab li {
+            background-color: #e8eaf6; /* Light Indigo */
+            padding: 15px;
+            border-left: 5px solid var(--color-primary);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        #vocab .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Grammar Styling */
+        #grammar details {
+            margin-bottom: 15px;
+            background-color: #fff3e0; /* Light Amber */
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        #grammar summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--color-text);
+        }
+
+        /* Comprehension Check Styling */
+        #quiz ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #quiz li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fce4ec; /* Light Pink for contrast */
+            border-radius: 5px;
+        }
+
+        #quiz strong {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        #quiz label {
+            display: block;
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        #quiz label:hover {
+            background-color: #f8bbd0;
+        }
+
+        #quiz input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #777;
+        }
+                .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p title="Welkom bij uw Spaanse leeshulp.">¡**Bienvenido** a tu ayuda de lectura en español!</p>
+    <h1 title="Het Mysterie van de Bronzen Zandloper.">El **Misterio** del Reloj de Arena de **Bronce**</h1>
+    <p title="Niveau B1, gericht op Castiliaans Spaans.">Nivel **B1**, enfocado en **Castellano**.</p>
+</header>
+
+<div class="container">
+
+    <section id="story">
+        <a href="../index.html" class="back-link">← Volver a las historias</a>
+        <h2 title="Het verhaal van een onverwachte ontdekking.">📚 El **Relato** de un **Descubrimiento** Inesperado</h2>
+
+        <p title="Marta was een jonge historica die in Madrid woonde.">Marta era una joven **historiadora** que vivía en **Madrid**.</p>
+        <p title="Ze had altijd een sterke interesse gehad in oude voorwerpen en hun verborgen verhalen.">Siempre había tenido un fuerte **interés** por los **objetos** antiguos y sus historias **ocultas**.</p>
+        <p title="Haar appartement, vlakbij de Plaza Mayor, stond vol met boeken en kaarten.">Su **piso**, cerca de la Plaza Mayor, estaba lleno de **libros** y **mapas**.</p>
+        <p title="Op een zonnige vrijdagochtend, terwijl ze in een antiekwinkel snuffelde, vond ze iets speciaals.">Una **mañana** soleada de **viernes**, mientras **curioseaba** en una tienda de **antigüedades**, **encontró** algo especial.</p>
+
+        <p title="Het was een klein, elegant zandloperklokje, gemaakt van brons.">Era un reloj de **arena** pequeño y **elegante**, hecho de **bronce**.</p>
+        <p title="Het zand erin was niet geel, maar van een dieprode kleur.">La arena en su **interior** no era amarilla, sino de un color **rojo** intenso.</p>
+        <p title="Op de basis was een inscriptie in het Latijn: 'Tempus per Somnium Transit'.">En la **base** había una **inscripción** en latín: *'Tempus per Somnium Transit'*.</p>
+        <p title="Marta betaalde er een redelijke prijs voor en nam het mee naar huis.">Marta **pagó** un **precio** razonable por él y se lo **llevó** a casa.</p>
+
+        <p title="Die avond, na het avondeten, plaatste ze het op haar nachtkastje.">Esa **noche**, después de la **cena**, lo **colocó** sobre su **mesita** de noche.</p>
+        <p title="Toen ze het omdraaide, voelde ze een lichte duizeligheid.">Al **darle** la **vuelta**, **sintió** un ligero **mareo**.</p>
+        <p title="Toen ze in slaap viel, begon het rode zand ongewoon snel te vallen.">Cuando se **durmió**, la arena roja **empezó** a caer a una **velocidad** inusual.</p>
+        <p title="Ze werd wakker, niet in haar appartement, maar in een weelderige tuin.">Se **despertó**, no en su piso, sino en un **jardín** **exuberante**.</p>
+
+        <p title="Een oude vrouw, gekleed in kleding uit de 17e eeuw, benaderde haar glimlachend.">Una **anciana**, vestida con ropa del **siglo** XVII, se le **acercó** sonriendo.</p>
+        <p title="Ze sprak Castiliaans met een charmant, enigszins archaïsch accent.">Hablaba **castellano** con un acento **encantador** y algo **arcaico**.</p>
+        <p title=" 'U bent degene die de Zandloper heeft geactiveerd,' zei de vrouw.">**'Eres** tú quien ha **activado** el **Reloj de Arena**,' dijo la mujer.</p>
+        <p title=" 'Elke keer dat hij wordt omgedraaid, reist de gebruiker door de tijd in zijn dromen.'">**'Cada** vez que se le **da** la **vuelta**, el **usuario** viaja en el tiempo en sus **sueños**.' </p>
+
+        <p title="Marta was verbijsterd. 'Ben ik aan het dromen?' vroeg ze.">Marta estaba **perpleja**. '**Estoy** soñando?' **preguntó**.</p>
+        <p title=" 'U bent aan het dromen, maar de omgeving is heel echt,' antwoordde de oudere dame.">**'Estás** soñando, pero el **entorno** es muy **real**,' **contestó** la anciana.</p>
+        <p title=" 'Dit is de tuin van het Palacio Real in 1680. Ik ben de tuinier.'">**'Este** es el **jardín** del Palacio Real en **1680**. Yo soy la **jardinera**.' </p>
+        <p title=" 'U moet een belangrijk detail onthouden voordat de tijd verstrijkt.'">**'Debes** **recordar** un **detalle** importante **antes** de que el tiempo se **agote**.'</p>
+
+        <p title="De zandloper, die ze nog steeds in haar hand hield, was bijna leeg.">El reloj de arena, que **aún** sostenía en su **mano**, estaba casi **vacío**.</p>
+        <p title=" 'Zoek de sleutel van de koninklijke bibliotheek, die verborgen is achter de waterput,' fluisterde de tuinier.">**'Busca** la **llave** de la **biblioteca** real, **oculta** **detrás** del **pozo**,' **susurró** la jardinera.</p>
+        <p title=" 'Ze zal u helpen de geschiedenis te begrijpen.'">**'Te** **ayudará** a **comprender** la historia.'</p>
+
+        <p title="Met een schok van adrenaline keerde Marta terug naar haar bed.">Con un **estremecimiento** de **adrenalina**, Marta **volvió** a su cama.</p>
+        <p title="Het rode zand was gestopt.">La arena roja se había **detenido**.</p>
+        <p title="Ze sprong uit bed en keek naar de klok: het was precies middernacht.">**Saltó** de la cama y **miró** el reloj: eran las **doce** en punto.</p>
+        <p title="Haar droom voelde zo echt. Kon de 'echte' sleutel echt bestaan?">Su sueño se **sentía** tan **real**. ¿Podría la llave 'real' **existir** de **verdad**?</p>
+        <p title="De volgende dag begon Marta aan haar zoektocht, met de bronzen zandloper als haar enige aanwijzing.">Al **día** **siguiente**, Marta **comenzó** su **búsqueda**, con el reloj de arena de bronce como su **única** **pista**.</p>
+    </section>
+
+    <section id="vocab">
+        <h2 title="Belangrijke woordenschat uit het verhaal.">🗝️ **Vocabulario** Clave</h2>
+        <ul>
+            <li><span class="emoji">⏳</span> **El reloj de arena** (M.): De zandloper</li>
+            <li><span class="emoji">🏰</span> **El Palacio Real** (M.): Het Koninklijk Paleis</li>
+            <li><span class="emoji">📚</span> **La biblioteca** (F.): De bibliotheek</li>
+            <li><span class="emoji">🏺</span> **El bronce** (M.): Het brons</li>
+            <li><span class="emoji">💡</span> **La pista** (F.): De aanwijzing/spoort</li>
+            <li><span class="emoji">👀</span> **Curiosear** (V.): Rondneuzen/snuffelen</li>
+            <li><span class="emoji">👵</span> **La anciana** (F.): De oude vrouw</li>
+            <li><span class="emoji">🌿</span> **El jardín exuberante** (M.): De weelderige tuin</li>
+            <li><span class="emoji">💫</span> **El mareo** (M.): De duizeligheid</li>
+            <li><span class="emoji">🤔</span> **Perpleja/o** (Adj.): Verbijsterd/verbouwereerd</li>
+            <li><span class="emoji">💰</span> **El precio razonable** (M.): De redelijke prijs</li>
+            <li><span class="emoji">📜</span> **Archaico/a** (Adj.): Archaïsch/oud (m.b.t. taal)</li>
+        </ul>
+    </section>
+
+    <section id="grammar">
+        <h2 title="Belangrijke grammaticale punten die in de tekst zijn gebruikt.">⚙️ **Gramática** Clave (Nivel B1)</h2>
+
+        <details>
+            <summary title="De onvoltooid verleden tijd (Imperfecto) vs. de voltooid verleden tijd (Indefinido/Pretérito Perfecto Simple).">**Pretérito Imperfecto vs. Pretérito Indefinido**</summary>
+            <p title="De Imperfecto beschrijft gewoonten, situaties of achtergrond.">El **Imperfecto** describe **hábitos**, **situaciones** o **contexto**.</p>
+            <p title="Voorbeeld: Marta era una joven historiadora (beschrijving).">*Ejemplo:* Marta **era** una joven historiadora (descripción).</p>
+            <p title="De Indefinido beschrijft voltooide acties in een specifiek moment.">El **Indefinido** describe **acciones terminadas** en un momento específico.</p>
+            <p title="Voorbeeld: encontró algo especial (een voltooide actie).">*Ejemplo:* **encontró** algo especial (acción terminada).</p>
+        </details>
+
+        <details>
+            <summary title="Woorden als 'Aún' (nog) en 'Todavía' (nog steeds).">**Adverbios de Tiempo: 'Aún' y 'Todavía'**</summary>
+            <p title="Beide betekenen 'nog' of 'nog steeds' en worden gebruikt om de continuïteit van een actie te benadrukken.">Ambos significan 'nog' o 'nog steeds' y se usan para enfatizar la **continuidad** de una acción.</p>
+            <p title="Voorbeeld uit de tekst: el reloj de arena, que aún sostenía en su mano.">*Ejemplo del texto:* el reloj de arena, que **aún** **sostenía** en su mano.</p>
+            <p title="In het Castiliaans zijn ze vrijwel uitwisselbaar.">En castellano son prácticamente **intercambiables**.</p>
+        </details>
+
+        <details>
+            <summary title="Het gebruik van 'deber' (moeten) en de Imperatief (gebiedende wijs).">**Modales y Mandatos: 'Deber' e Imperativo**</summary>
+            <p title="Deber (infinitief) wordt gebruikt om een verplichting of aanbeveling uit te drukken.">**Deber** (+ infinitivo) se usa para expresar una **obligación** o **recomendación**.</p>
+            <p title="Voorbeeld: Debes recordar un detalle importante (je moet onthouden).">*Ejemplo:* **Debes** **recordar** un detalle importante (je moet onthouden).</p>
+            <p title="De Imperatief (gebiedende wijs) wordt gebruikt om direct opdrachten te geven: 'Busca la llave' (zoek de sleutel).">El **Imperativo** se usa para dar órdenes directas: **'Busca** la llave' (zoek de sleutel).</p>
+        </details>
+    </section>
+
+    <section id="quiz">
+        <h2 title="Test uw begrip van het verhaal.">🧠 **Comprobación** de Comprensión</h2>
+        <p title="Kies het beste antwoord voor elke vraag.">**Elige** la **mejor** respuesta para cada pregunta.</p>
+
+        <ol>
+            <li>
+                <strong title="Wat was de ongebruikelijke eigenschap van de zandloper van Marta?">¿Cuál era la **característica** inusual del reloj de arena de Marta?</strong>
+                <label><input type="radio" name="q1" value="a" title="Het was gemaakt van zilver.">A. Estaba hecho de plata.</label>
+                <label><input type="radio" name="q1" value="b" title="Het had een inscriptie in het Grieks.">B. Tenía una inscripción en griego.</label>
+                <label><input type="radio" name="q1" value="c" title="Het zand was rood van kleur.">C. La arena era de color rojo.</label>
+                <label><input type="radio" name="q1" value="d" title="Het kon de tijd stoppen.">D. Podía detener el tiempo.</label>
+            </li>
+
+            <li>
+                <strong title="Welk tijdperk of locatie bezocht Marta in haar droom?">¿A qué **época** o **lugar** viajó Marta en su sueño?</strong>
+                <label><input type="radio" name="q2" value="a" title="Het Alhambra in Granada in de 15e eeuw.">A. El Alhambra de Granada en el siglo XV.</label>
+                <label><input type="radio" name="q2" value="b" title="Het Plaza Mayor in 1800.">B. La Plaza Mayor en el año 1800.</label>
+                <label><input type="radio" name="q2" value="c" title="Het Palacio Real in 1680.">C. El Palacio Real en 1680.</label>
+                <label><input type="radio" name="q2" value="d" title="Een onbekende tuin in Portugal.">D. Un jardín desconocido en Portugal.</label>
+            </li>
+
+            <li>
+                <strong title="Wat moest Marta onthouden volgens de tuinier?">Según la jardinera, ¿qué debía **recordar** Marta?</strong>
+                <label><input type="radio" name="q3" value="a" title="De datum van een koninklijk feest.">A. La fecha de una fiesta real.</label>
+                <label><input type="radio" name="q3" value="b" title="De locatie van de sleutel van de bibliotheek.">B. La ubicación de la llave de la biblioteca.</label>
+                <label><input type="radio" name="q3" value="c" title="Het wachtwoord van het paleis.">C. La contraseña del palacio.</label>
+                <label><input type="radio" name="q3" value="d" title="De betekenis van de Latijnse inscriptie.">D. El significado de la inscripción en latín.</label>
+            </li>
+        </ol>
+    </section>
+
+</div>
+
+<footer>
+    <p title="Einde van het hoofdstuk. Blijf oefenen!">**Fin** del capítulo. **¡Sigue practicando!**</p>
+</footer>
+
+</body>
+</html>

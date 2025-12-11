@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Misterio de la Nevera Compartida - B1 Español</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+        :root {
+            --color-primary: #337a7a; /* Teal/Turquoise oscuro */
+            --color-secondary: #f4e9cd; /* Crema suave */
+            --color-accent: #e07a5f; /* Terracota */
+            --color-text: #2c3e50; /* Azul oscuro */
+            --color-bg: #ffffff;
+            --color-tooltip-bg: #2c3e50;
+            --color-tooltip-text: #ffffff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-secondary);
+            color: var(--color-text);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            background-color: var(--color-bg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 20px 30px;
+            margin: -20px -30px 30px;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .story p, .section-content p, .section-content li, .quiz-question, .footer p {
+            position: relative;
+            display: block; /* Asegura que la P es el contenedor de la frase */
+            margin: 1em 0;
+            cursor: help; /* Indica que es interactivo */
+        }
+
+        /* Tooltip Styles */
+        [data-translation]:hover::after, [data-translation]:focus::after {
+            content: attr(data-translation);
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            transform: translateX(-50%);
+            background-color: var(--color-tooltip-bg);
+            color: var(--color-tooltip-text);
+            padding: 8px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            z-index: 10;
+            opacity: 1;
+            transition: opacity 0.3s;
+            pointer-events: none; /* Crucial para que no bloquee otros elementos */
+            font-size: 0.9em;
+            font-weight: 400;
+            line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-translation]::after {
+            opacity: 0;
+        }
+
+        .story {
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        /* Key Vocab */
+        .vocab-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .vocab-list li {
+            background-color: var(--color-secondary);
+            padding: 10px 15px;
+            border-left: 5px solid var(--color-primary);
+            border-radius: var(--border-radius);
+            font-weight: bold;
+        }
+
+        .vocab-list li span {
+            display: block;
+            font-size: 0.9em;
+            color: var(--color-accent);
+            font-weight: normal;
+        }
+
+        /* Comprehension Check (Quiz) */
+        .quiz-question {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            background-color: #f9f9f9;
+        }
+
+        .quiz-question strong {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .quiz-option {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #eee;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            color: var(--color-text);
+        }
+
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Key Grammar */
+        .grammar-box {
+            background-color: #f4f8ff;
+            border: 1px solid #cceeff;
+            padding: 15px;
+            border-left: 5px solid var(--color-accent);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .grammar-box h4 {
+            color: var(--color-primary);
+            margin-top: 0;
+            border-bottom: 1px dashed var(--color-primary);
+            padding-bottom: 5px;
+        }
+
+        .grammar-box code {
+            background-color: #e6f0ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+                .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Simple script for mobile/click behavior (optional but good practice)
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('[data-translation]');
+            elements.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    // Solo activar en dispositivos con pantalla pequeña o si es realmente útil
+                    if (window.innerWidth <= 768 || e.target.closest('.story')) {
+                        // Implementación simple: podría alternar una clase 'show-tooltip'
+                        console.log('Clicked sentence for translation:', el.getAttribute('data-translation'));
+                        // Para un entorno web real, necesitarías JS para manejar el 'click' como 'hover'
+                        // Pero con el CSS :hover, es suficiente para el formato desktop.
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <p data-translation="Welkom bij je Spaanse flashcard! Niveau B1.">¡Bienvenido a tu flashcard de español! Nivel B1.</p>
+        <h1 data-translation="Het Mysterie van de Gedeelde Koelkast">El Misterio de la Nevera Compartida</h1>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Volver a las historias</a>
+
+        <h2 class="section-title">La Historia</h2>
+
+        <div class="story">
+            <p data-translation="Adriana, een jonge Andalusische architecte, deelde een appartement in het centrum van Madrid.">Adriana, una joven arquitecta andaluza, compartía un piso en el centro de Madrid.</p>
+            <p data-translation="Haar huisgenoten waren twee jongens, Carlos en Nico, die tamelijk aardig **leken**.">Sus compañeros eran dos chicos, Carlos y Nico, que **parecían** bastante agradables.</p>
+            <p data-translation="Alles **ging goed** in het begin, het samenwonen was **draaglijk** en schoonmaken was geen probleem.">Todo **iba bien** al principio, la convivencia era **llevadera** y la limpieza no era un problema.</p>
+            <p data-translation="Echter, een duistere **kwestie begon de** rust in huis te verstoren: het eten dat **verdween** uit de koelkast.">Sin embargo, un **asunto** oscuro **empezó a** perturbar la paz en el hogar: la comida que **desaparecía** de la nevera.</p>
+
+            <p data-translation="Op een maandagochtend **ontdekte** Adriana dat haar pot met klaargemaakte linzen, **gereserveerd** voor het avondeten, er niet meer **was**.">Un lunes por la mañana, Adriana **descubrió** que su bote de lentejas preparadas, **reservado** para la cena, ya no **estaba**.</p>
+            <p data-translation="De avond ervoor **had ze ervoor gezorgd** om een briefje met haar naam erop te plakken.">La noche anterior, **se había asegurado** de poner una nota con su nombre.</p>
+            <p data-translation="—Dit is ongelooflijk! —dacht ze, **behoorlijk** boos.">—¡Esto es increíble! —pensó, **bastante** enfadada.</p>
+            <p data-translation="Ze besloot haar huisgenoten op datzelfde moment **te confronteren**.">Decidió **confrontar** a sus compañeros en ese mismo instante.</p>
+
+            <p data-translation="Carlos, die grafisch ontwerp **studeerde**, **zwoer** dat hij alleen een yoghurt **had genomen**.">Carlos, que **estudiaba** diseño gráfico, **juró** que solo **había tomado** un yogur.</p>
+            <p data-translation="Nico, die als ober **werkte**, **beweerde** dat hij **nog niet ontbeten had**.">Nico, que **trabajaba** como camarero, **afirmó** que **aún no había desayunado**.</p>
+            <p data-translation="Beiden **leken** oprecht, maar het bewijs, de lege koelkast, **gaf** het tegenovergestelde **aan**.">Ambos **parecían** sinceros, pero la evidencia, la nevera vacía, **indicaba** lo contrario.</p>
+
+            <p data-translation="Adriana **vermoedde** dat een van hen **loog**, of erger nog, dat er een spookdief **was**.">Adriana **sospechaba** que uno de ellos **mentía**, o peor aún, que **había** un ladrón fantasma.</p>
+            <p data-translation="Om het mysterie **op te lossen**, **kreeg ze** een idee: een speelgoedcamera plaatsen die echt **leek**.">Para **resolver** el misterio, **tuvo** una idea: poner una cámara de juguete que **pareciese** real.</p>
+            <p data-translation="De volgende dag **verstopte ze** het 'apparaat' tussen enkele melk**pakken** en **wachtte** ze af wat er **zou gebeuren**.">Al día siguiente, **escondió** el 'dispositivo' entre unos **envases** de leche y **esperó** lo **sucediese**.</p>
+
+            <p data-translation="Tegen de avond, bij het **terugkeren** van haar werk, **was** de koelkast intact.">Por la tarde, al **regresar** del trabajo, la nevera **estaba** intacta.</p>
+            <p data-translation="Maar bij **zonsondergang** **deed** een hard **geluid** in de keuken haar haar kamer verlaten.">Pero al **atardecer**, un fuerte **ruido** en la cocina la **hizo** salir de su habitación.</p>
+            <p data-translation="Daar **vond** ze Carlos, niet eten **steelend**, maar **vechtend** tegen een enorme rat die **probeerde** zijn laatste **stuk** kaas mee te nemen.">Allí **encontró** a Carlos, no **robando** comida, sino **luchando** contra una enorme rata que **intentaba** llevarse su último **trozo** de queso.</p>
+            <p data-translation="De koelkast **had** geen dief, maar een **plaag** van knaagdieren die een ingang **had gevonden**.">La nevera no **tenía** un ladrón, sino una **plaga** de roedores que **había encontrado** una entrada.</p>
+            <p data-translation="Carlos **verontschuldigde zich** dat hij het niet eerder **had gezegd**, aangezien hij zich **schaamde**.">Carlos **pidió disculpas** por no **haberlo dicho** antes, ya que **le daba vergüenza**.</p>
+
+            <p data-translation="Adriana **voelde zich** opgelucht en **een beetje** schuldig omdat ze haar vrienden **had verdacht**.">Adriana **se sintió** aliviada y **un poco** culpable por **haber sospechado** de sus amigos.</p>
+            <p data-translation="Die avond **kwamen** de drie **samen** om het gat **te dichten** en **belden** ze een ongediertebestrijding.">Esa noche, los tres **se reunieron** para **sellar** el agujero y **llamaron** a un control de plagas.</p>
+            <p data-translation="De rust **keerde terug** naar het appartement, en het mysterie van de koelkast **werd** uiteindelijk **opgelost**.">La paz **regresó** al piso, y el misterio de la nevera **quedó** finalmente **resuelto**.</p>
+        </div>
+
+        <h2 class="section-title">Claves Lingüísticas</h2>
+
+        <div class="grammar-box">
+            <h4 data-translation="Sleutel Grammatica: De Verleden Tijd">Key Grammar: Los Tiempos Pasados (Pretérito Perfecto Compuesto, Indefinido e Imperfecto)</h4>
+            <p data-translation="Op B1 niveau is het essentieel om het gebruik van de drie hoofdverleden tijden te beheersen, vooral het contrast tussen de Onvoltooid Verleden Tijd (Imperfecto) en de Onbepaalde Verleden Tijd (Indefinido).">En B1 es fundamental dominar el uso de los tres tiempos pasados principales, especialmente el contraste entre el Pretérito Imperfecto y el Pretérito Indefinido.</p>
+            <ul>
+                <li data-translation="**Pretérito Perfecto Compuesto (Voltooid Verleden Tijd):** Gebruikt voor acties die net zijn gebeurd of die verband houden met het heden (Vaak gebruikt in Spanje).">**Pretérito Perfecto Compuesto (Haber + Participio):** Se usa para acciones que acaban de ocurrir o que tienen conexión con el presente (Muy usado en Castellano).
+                    <br>Ejemplo: **<code data-translation="Ik heb een briefje geplakt">Me he asegurado</code>** (implica que es relevante ahora).</li>
+                <li data-translation="**Pretérito Imperfecto (Onvoltooid Verleden Tijd):** Gebruikt voor beschrijvingen, gewoonten of acties die op de achtergrond plaatsvonden (Wat er gebeurde).">**Pretérito Imperfecto:** Se usa para descripciones, hábitos o acciones que sucedían en el fondo (Lo que estaba pasando).
+                    <br>Ejemplo: **<code data-translation="Adriana vermoedde">Adriana sospechaba</code>** (estado mental, no una acción puntual).</li>
+                <li data-translation="**Pretérito Indefinido (Onbepaalde Verleden Tijd):** Gebruikt voor voltooide acties op een specifiek moment in het verleden (De belangrijkste gebeurtenissen).">**Pretérito Indefinido:** Se usa para acciones terminadas en un momento específico del pasado (Los hechos principales).
+                    <br>Ejemplo: **<code data-translation="Ze besloot">Decidió</code>** (una acción que ocurrió y terminó).</li>
+            </ul>
+        </div>
+
+        <div class="grammar-box">
+            <h4 data-translation="Sleutel Grammatica: De Subjunctief (Subjuntivo)">Key Grammar: El Subjuntivo (B1/B2)</h4>
+            <p data-translation="We zien de Subjunctief gebruikt worden na uitdrukkingen van wens, twijfel, noodzaak of in onzekere bijzinnen.">Vemos el Subjuntivo usado tras expresiones de deseo, duda, necesidad o en cláusulas de incertidumbre.</p>
+            <p data-translation="Voorbeeld in het verhaal: 'poner una cámara que **pareciese** real'. De Subjunctief in de Onvoltooid Verleden Tijd (Imperfecto de Subjuntivo) wordt gebruikt omdat 'cámara' onzeker of hypothetisch is in dat specifieke verleden moment.">Ejemplo en la historia: 'poner una cámara que **pareciese** real'. El Imperfecto de Subjuntivo se usa porque la 'cámara' es incierta o hipotética en ese momento pasado específico.</p>
+        </div>
+
+        <h3 class="section-title">Key Vocab 🔑</h3>
+        <ul class="vocab-list">
+            <li data-translation="Huisgenoot; Kamergenoot">El/La compañero/a de piso 🧑‍🤝‍🧑 <span>(flatmate)</span></li>
+            <li data-translation="Draaglijk; Aangenaam">Llevadero/a 😉 <span>(bearable, easy to handle)</span></li>
+            <li data-translation="Kwestie; Zaak">El asunto 🔎 <span>(issue, matter, affair)</span></li>
+            <li data-translation="Verdween (van verdwijnen)">Desaparecía 👻 <span>(was disappearing - Imperfecto de Desaparecer)</span></li>
+            <li data-translation="Zwoer (van zweren)">Juró ✋ <span>(swore - Indefinido de Jurar)</span></li>
+            <li data-translation="Confronteren">Confrontar 😠 <span>(to confront)</span></li>
+            <li data-translation="Verpakkingsmaterialen; Pakken">Los envases 📦 <span>(containers, packaging)</span></li>
+            <li data-translation="Bij zonsondergang; Tegen de avond">Al atardecer 🌅 <span>(at dusk, at sunset)</span></li>
+            <li data-translation="Knaagdierenplaag">La plaga de roedores 🐭 <span>(rodent plague/infestation)</span></li>
+            <li data-translation="Zich schamen">Dar vergüenza 😳 <span>(to be embarrassed/ashamed)</span></li>
+            <li data-translation="Opgelucht">Aliviada 🙏 <span>(relieved)</span></li>
+            <li data-translation="Dichten; Verzegelen">Sellar 🩹 <span>(to seal, to close up)</span></li>
+        </ul>
+
+        <h3 class="section-title">Comprehension Check (Test de Comprensión) 🤔</h3>
+
+        <div class="quiz-question" data-translation="Vraag 1: Waarom was Adriana zo boos op maandag?">
+            <strong data-translation="Pregunta 1: ¿Por qué estaba Adriana tan enfadada el lunes por la mañana?">1. ¿Por qué estaba Adriana tan enfadada el lunes por la mañana?</strong>
+            <p class="quiz-option" data-translation="Omdat Carlos en Nico niet hadden schoongemaakt.">A. Porque Carlos y Nico no habían limpiado.</p>
+            <p class="quiz-option" data-translation="Omdat ze haar gereserveerde eten niet meer in de koelkast kon vinden.">B. Porque no encontró su comida reservada en la nevera.</p>
+            <p class="quiz-option" data-translation="Omdat Carlos loog over het nemen van een yoghurt.">C. Porque Carlos le mintió sobre haber cogido un yogur.</p>
+            <p class="quiz-option" data-translation="Omdat er een hard geluid in de keuken was.">D. Porque había un ruido fuerte en la cocina.</p>
+        </div>
+
+        <div class="quiz-question" data-translation="Vraag 2: Welke actie ondernam Adriana om het probleem op te lossen?">
+            <strong data-translation="Pregunta 2: ¿Qué acción tomó Adriana para intentar resolver el problema?">2. ¿Qué acción tomó Adriana para intentar resolver el problema?</strong>
+            <p class="quiz-option" data-translation="Ze kocht een nieuwe, kleine koelkast voor zichzelf.">A. Compró una nevera nueva y pequeña solo para ella.</p>
+            <p class="quiz-option" data-translation="Ze plaatste een camera van speelgoed die echt leek.">B. Puso una cámara de juguete que pareciese real.</p>
+            <p class="quiz-option" data-translation="Ze veranderde de sloten op de koelkast.">C. Cambió las cerraduras de la nevera.</p>
+            <p class="quiz-option" data-translation="Ze belde onmiddellijk de ongediertebestrijding.">D. Llamó al control de plagas inmediatamente.</p>
+        </div>
+
+        <div class="quiz-question" data-translation="Vraag 3: Wat was de echte oorzaak van het verdwijnen van het eten?">
+            <strong data-translation="Pregunta 3: ¿Cuál fue la causa real de la desaparición de la comida?">3. ¿Cuál fue la causa real de la desaparición de la comida?</strong>
+            <p class="quiz-option" data-translation="Een van de jongens at in het geheim de maaltijden van de anderen.">A. Uno de los chicos se comía a escondidas las comidas de los demás.</p>
+            <p class="quiz-option" data-translation="Carlos had de lentejas in de vuilnisbak gegooid.">B. Carlos había tirado las lentejas a la basura.</p>
+            <p class="quiz-option" data-translation="Een knaagdierenplaag kwam het huis binnen door een gat.">C. Una plaga de roedores estaba entrando en la casa por un agujero.</p>
+            <p class="quiz-option" data-translation="Nico had het eten meegenomen naar zijn werk.">D. Nico se había llevado la comida a su trabajo.</p>
+        </div>
+        
+        <h3 class="section-title">¡Una Frase Útil de B1! 🗣️</h3>
+        <p data-translation="Om een onzekerheid of twijfel in het verleden uit te drukken:">Para expresar una incertidumbre o duda en el pasado:</p>
+        <blockquote data-translation="Zou het kunnen zijn dat ik mijn portemonnee gisteren in de bus heb achtergelaten? (Zou + werkwoord in de verleden tijd).">¿Podría ser que **me hubiese dejado** la cartera en el autobús ayer? (Condicional o Imperfecto de Subjuntivo).</blockquote>
+        
+        <p data-translation="¡Veel succes met je B1 Spaans!">¡Mucha suerte con tu español B1!</p>
+
+        <footer class="footer">
+            <p data-translation="Gemaakt voor de Spaanse leerling uit Nederland (Niveau B1).">Creado para el estudiante de español de Países Bajos (Nivel B1).</p>
+        </footer>
+    </div>
+
+</body>
+</html>
